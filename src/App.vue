@@ -1,6 +1,5 @@
 <template lang="pug">
   div#app
-    input(v-model="email")
     button(v-on:click="clickOnPreorder") Preorder Now!
 </template>
 
@@ -9,14 +8,9 @@ import { db } from './db'
 
 export default {
   name: 'App',
-  data: () => ({
-    email: ''
-  }),
   methods: {
     async clickOnPreorder() {
-      await db.collection('preorder-tracker').add({
-        email: this.email
-      })
+      await db.collection('preorder-tracker').add()
       .then(() => alert('success!'))
       .catch(err => console.error(err))
     }
