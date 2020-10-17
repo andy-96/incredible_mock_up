@@ -10,8 +10,8 @@ export default {
   name: 'App',
   methods: {
     async clickOnPreorder() {
-      await db.collection('preorder-tracker').add()
-      .then(() => alert('success!'))
+      await db.collection('preorder-tracker').add({})
+      .then(() => alert('This will be soon available!'))
       .catch(err => console.error(err))
     }
   }
