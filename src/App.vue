@@ -1,15 +1,25 @@
 <template lang="pug">
   div#app
-    button Click me
+    input(v-model="email")
+    button(v-on:click="clickOnPreorder") Preorder Now!
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { db } from './db'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data: () => ({
+    email: ''
+  }),
+  methods: {
+    async clickOnPreorder() {
+      await db.collection('preorder-tracker').add({
+        email: this.email
+      })
+      .then(() => alert('success!'))
+      .catch(err => console.error(err))
+    }
   }
 }
 </script>
