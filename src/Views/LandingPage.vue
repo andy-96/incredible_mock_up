@@ -20,7 +20,7 @@ div
         label='Email'
       )
         b-input(placeholder="max.mustermann@email.de" v-model="preorderEmail")
-      b-button#preorder-button(v-on:click="clickOnPreorder") Preorder Now!
+      button#preorder-button(@click="clickOnPreorder") Preorder Now!
   .navbar-spacer#team
   .section.custom-section
     .container
@@ -30,6 +30,10 @@ div
 <script>
 import { db } from '../db'
 import emailjs from 'emailjs-com'
+import dotenv from 'dotenv'
+dotenv.config()
+
+const { VUE_APP_emailjs_serviceID, VUE_APP_emailjs_templateID, VUE_APP_emailjs_userID } = process.env
 
 export default {
   name: "LandingPage",
@@ -46,10 +50,12 @@ export default {
           })
           .catch(err => console.error(err))
         })
-        .then(() => alert('Sorry, aktuell ist es nicht mehr verfügbar. Versuche es später nochmal!'))
         .catch(err => console.error(err))
-      console.log(this.preorderEmail)
-      await emailjs.sendForm()
+      emailjs.send(VUE_APP_emailjs_serviceID, VUE_APP_emailjs_templateID, {
+        user_email: this.preorderEmail
+      }, VUE_APP_emailjs_userID)
+        .then(() => console.log('Success!'))
+        .catch(err => console.error(err))
     },
     clickOnMoreInfo() {
       console.log('more info')
