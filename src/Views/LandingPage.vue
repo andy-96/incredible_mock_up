@@ -67,11 +67,15 @@ export default {
 <style lang="sass" scoped>
 .header-custom-section
   height: calc(100vh - 56px)
+
 .custom-section
   height: 100vh
 
 .navbar-spacer
   height: 56px
+
+#header
+  background-color: #f3fbef
 
 #preorder-button
   font-family: 'Bebas Neue', cursive

@@ -1,15 +1,15 @@
 <template lang="pug">
   div#app
-    b-navbar(fixed-top shadow)
+    b-navbar(fixed-top)
       template(slot='brand')
         b-navbar-item(href='#')
-          img(src='https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png' alt='Lightweight UI components for Vue.js based on Bulma')
+          img(src='./images/ii-logo.png' alt='incredible insects logo' width='100px' height='10px')
       template(slot='end')
-        b-navbar-item(href='#') Home
-        b-navbar-item(href='#motivation')  Motivation
-        b-navbar-item(href='#product') Produkt
-        b-navbar-item(href='#preorder') Preorder
-        b-navbar-item(href='#team') Team
+        b-navbar-item(href='#')#text Home
+        b-navbar-item(href='#motivation')#text  Motivation
+        b-navbar-item(href='#product')#text Produkt
+        b-navbar-item(href='#preorder')#text Preorder
+        b-navbar-item(href='#team')#text Team
     landing-page
 </template>
 
@@ -38,6 +38,7 @@ export default {
 
 <style lang="sass">
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap')
 
 html, body
   margin: 0
@@ -50,4 +51,6 @@ html, body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
+#text
+  font-family: Noto Sans JP
 </style>

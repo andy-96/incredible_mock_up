@@ -3,6 +3,7 @@ import App from './App.vue'
 import { firestorePlugin } from 'vuefire'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
+import './sass/mystyles.scss'
 
 Vue.use(Buefy)
 Vue.use(firestorePlugin)
