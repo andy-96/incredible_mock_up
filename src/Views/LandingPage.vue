@@ -1,9 +1,11 @@
 <template lang="pug">
 div
   .section.header-custom-section#header
-    .container
-      h1.title Header
-      b-button(@click="clickOnMoreInfo") Erfahre mehr
+    .container.header
+      .header-main-content
+        h1.header-title A PRESENT FOR THE FUTURE
+        img(src="../images/box-mockup.png")
+      <!-- b-button(@click="clickOnMoreInfo") Erfahre mehr -->
   .navbar-spacer#motivation
   .section.custom-section
     .container
@@ -25,6 +27,8 @@ div
   .section.custom-section
     .container
       h1.title Team
+  .footer
+    h1 footer
 </template>
 
 <script>
@@ -65,6 +69,30 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.header
+  position: relative
+
+  .header-main-content
+    height: 400px
+    margin: auto
+    transform: translateY(25%)
+
+    .header-title
+      font-size: 100px
+      font-family: Bebas Neue
+      color: black
+      line-height: 100%
+      background-color: white
+      position: absolute
+      bottom: 50px
+      z-index: 2
+
+    img
+      border-radius: 30px
+      height: 400px
+      float: right
+      box-shadow: 0px 5px 20px #bdbdbd
+
 .header-custom-section
   height: calc(100vh - 56px)
 

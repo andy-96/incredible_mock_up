@@ -3,13 +3,13 @@
     b-navbar(fixed-top)
       template(slot='brand')
         b-navbar-item(href='#')
-          img(src='./images/ii-logo.png' alt='incredible insects logo' width='100px' height='10px')
+          img(src='./images/ii-logo.png' alt='incredible insects logo' width='140px' height='10px')
       template(slot='end')
-        b-navbar-item(href='#')#text Home
-        b-navbar-item(href='#motivation')#text  Motivation
-        b-navbar-item(href='#product')#text Produkt
-        b-navbar-item(href='#preorder')#text Preorder
-        b-navbar-item(href='#team')#text Team
+        b-navbar-item(href='#') home
+        b-navbar-item(href='#motivation')  motivation
+        b-navbar-item(href='#product') produkt
+        b-navbar-item(href='#preorder') preorder
+        b-navbar-item(href='#team') team
     landing-page
 </template>
 
@@ -47,10 +47,7 @@ html, body
   font-size: 16pt
 
 #app
-  font-family: Bebas Neue, Avenir, Helvetica, Arial, sans-serif
+  font-family: Noto Sans JP, Bebas Neue, Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-
-#text
-  font-family: Noto Sans JP
 </style>
