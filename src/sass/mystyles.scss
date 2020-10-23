@@ -1,6 +1,20 @@
 @charset "utf-8";
 @import "../../node_modules/bulma/bulma.sass";
 
-$navbar-background-color: #f3fbef;
+/* $navbar-background-color: #f3fbef; */
+
+/* colors */
+$primary: #B2CBA5;
+$primary-dark: #3A4A31;
+$primary-bright: #D1EAC3;
+$gray-bg: #F2F2F2;
+$gray-button: #B5B5B5;
+$accent: #E8C445;
+$shadow-color: rgba(0, 0, 0, 0.16);
+
+/* */
+$title-font: Bebas Neue;
+$text-font: Helvetica;
+
 
 @import "../../node_modules/bulma/sass/components/navbar.sass";

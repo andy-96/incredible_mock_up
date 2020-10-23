@@ -1,16 +1,21 @@
 <template lang="pug">
 div
-  .section.header-custom-section#header
-    .container.header
-      .header-main-content
-        h1.header-title A PRESENT FOR THE FUTURE
-        img(src="../images/box-mockup.png")
-      <!-- b-button(@click="clickOnMoreInfo") Erfahre mehr -->
+  .section.custom-section#header
+    .container
+      .header__text
+        h1.header__title Wie wäre es mal mit was neuem?
+        h2.header__subtitle Probiere jetzt die Zukunft
+        .header__buttons
+          b-button(rounded).button.header__button-order Jetzt bestellen
+          b-button(rounded).button.header__button-more Mehr erfahren
+      img.header__first-box(src="../images/incredible-box.png")
+      img.header__second-box(src="../images/incredible-box.png")
+      img.header__third-box(src="../images/incredible-box.png")
   .navbar-spacer#motivation
   .section.custom-section
     .container
       h1.title Motivation
-  .navbar-spacer#product
+  .navbar-spacer#the-incredible-box
   .section.custom-section
     .container
       h1.title Produkt
@@ -23,7 +28,7 @@ div
       )
         b-input(placeholder="max.mustermann@email.de" v-model="preorderEmail")
       button#preorder-button(@click="clickOnPreorder") Preorder Now!
-  .navbar-spacer#team
+  .navbar-spacer#contact
   .section.custom-section
     .container
       h1.title Team
@@ -69,32 +74,11 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.header
-  position: relative
+@import ../sass/mystyles
 
-  .header-main-content
-    height: 400px
-    margin: auto
-    transform: translateY(25%)
-
-    .header-title
-      font-size: 100px
-      font-family: Bebas Neue
-      color: black
-      line-height: 100%
-      background-color: white
-      position: absolute
-      bottom: 50px
-      z-index: 2
-
-    img
-      border-radius: 30px
-      height: 400px
-      float: right
-      box-shadow: 0px 5px 20px #bdbdbd
-
-.header-custom-section
-  height: calc(100vh - 56px)
+.custom-section:first-child
+  height: 100vh
+  margin-top: -84px
 
 .custom-section
   height: 100vh
@@ -102,26 +86,67 @@ export default {
 .navbar-spacer
   height: 56px
 
+.button
+  font-size: 0.8rem
+  height: 2.7rem
+  width: 9.5rem
+  font-weight: bold
+  color: white
+  font-family: $text-font
+  border-style: none
+  box-shadow: 0px 3px 6px $shadow-color
+
 #header
-  background-color: #f3fbef
+  background-color: $gray-bg
+  display: flex
+  position: relative
 
-#preorder-button
-  font-family: 'Bebas Neue', cursive
-  font-size: 2rem
-  padding: 0.5rem 2rem
-  color: black
-  background: none
-  cursor: pointer
-  border:
-    style: solid
-    radius: 25px
-    width: 2px
-    color: #f9ff00
+  .header__text
+    width: 37vw
+    z-index: 1
+    position: absolute
+    top: 50%
+    transform: translateY(-70%)
+
+    .header__title
+      font-size: 6rem
+      color: $primary-dark
+      margin-bottom: 1rem
+
+    .header__subtitle
+      font-size: 2rem
+      color: $primary-dark
+      margin-bottom: 1rem
+
+    .header__button-order
+      color: white
+      background-color: $primary-dark
+      margin-right: 1rem
+      
+    .header__button-more
+      color: white
+      background-color: $gray-button
+
+  .header__first-box
+    position: absolute
+    width: 45vw
+    transform: rotate(-9deg)
+    top: -10vh
+    right: -32vw
+
+  .header__second-box
+    position: absolute
+    width: 50vw
+    transform: rotate(20deg)
+    top: 5vh
+    right: 0
   
-  &:hover
-    transform: scale(1.1)
-    background-color: #3f4000
+  .header__third-box
+    position: absolute
+    width: 45vw
+    transform: rotate(-12deg)
+    right: 20vw
+    top: 45vh
 
-  transition: all 0.3s ease
 
 </style>
