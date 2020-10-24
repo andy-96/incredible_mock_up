@@ -143,19 +143,18 @@ input:focus
       background-color: $primary-dark
       margin-right: 1rem
       transition-duration: 0.5s
-
-    .header__button-order:hover
-      background-color: $accent
-      box-shadow: 0 0 0
+      &:hover
+        background-color: $accent
+        box-shadow: 0 0 0
     
     .header__button-more
       color: white
       background-color: $gray-button
       transition-duration: 0.5s
 
-    .header__button-more:hover
-      background-color: $gray-text
-      box-shadow: 0 0 0
+      &:hover
+        background-color: $gray-text
+        box-shadow: 0 0 0
 
     @media screen and (max-width: 1024px)
       .header__button-more
@@ -244,6 +243,7 @@ input:focus
 #the-incredible-box
   background-color: $gray-bg
   position: relative
+  z-index: -2
 
   .pattern-four
     position: absolute
@@ -251,6 +251,7 @@ input:focus
     top: 50vh
     right: -60vw
     min-width: 1200px
+    z-index: -1
   
   @media screen and (max-width: 800px)
     .pattern-four
@@ -270,6 +271,7 @@ input:focus
       transform: rotate(14deg)
       top: -10vh
       left: -15vw
+      z-index: -1
     
     @media screen and (max-width: 800px)
       .the-incredible-box__first-box
@@ -389,9 +391,9 @@ input:focus
       margin-right: auto
       transition-duration: 0.5s
 
-    .preorder__button:hover
-      background-color: $gray-text
-      box-shadow: 0 0 0
+      &:hover
+        background-color: $gray-text
+        box-shadow: 0 0 0
 
     .preorder__input
       display: block
@@ -411,19 +413,14 @@ input:focus
       margin-left: auto
       margin-right: auto
       margin-bottom: 1rem
+
+    .preorder__subtext
+      width: 40vw
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 1rem
+      font-size: 0.5rem
     
     @media screen and (max-width: 700px)
       .preorder__text
         width: 100%
-  
-.page-footer
-  background-color: $primary
-  height: 30vh
-  position: relative
-
-  .text-block
-    position: absolute
-    bottom: 3rem
-    left: 50%
-    transform: translateX(-50%)
-    text-align: center

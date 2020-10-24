@@ -9,7 +9,7 @@ div
         h1 Wie wäre es mal mit was neuem?
         h3 Probiere jetzt die Zukunft
         .header__buttons
-          b-button.button.header__button-order(rounded @click="clickOnHeaderPreorder") Jetzt bestellen
+          b-button.button.header__button-order(rounded @click="clickOnHeaderPreorder") Jetzt vorbestellen
           b-button.button.header__button-more(rounded @click="clickOnMoreInformation") Mehr erfahren
       img.header__first-box(src="../images/incredible-box.png")
       img.header__second-box(src="../images/incredible-box.png")
@@ -51,25 +51,22 @@ div
           p Alle Produkte in unserer INCREDIBLE BOX beziehen ihre Rohstoffe von nachhaltigen Industriepartnern. Sie wurden unter hohen Qualitätsanforder-ungen geprüft und sind in Deutschland zugelassen.
         .text-block
           font-awesome-icon.our-values__values-icon(:icon="['fas', 'globe-europe']" size="4x")
-          h4 Höchste Qualität
-          p Alle Produkte in unserer INCREDIBLE BOX beziehen ihre Rohstoffe von nachhaltigen Industriepartnern. Sie wurden unter hohen Qualitätsanforder-ungen geprüft und sind in Deutschland zugelassen.
+          h4 Gut für die Umwelt
+          p Insekten benötigen nur einen Bruchteil der Ressourcen, die zur Produktion der gleiche Menge Fleisch verwendet werden. So benötigt die Produktion von Grillen 50% weniger Wasser als die von Geflügel.
         .text-block
           font-awesome-icon.our-values__values-icon(:icon="['fas', 'heart']" size="4x")
-          h4 Höchste Qualität
-          p Alle Produkte in unserer INCREDIBLE BOX beziehen ihre Rohstoffe von nachhaltigen Industriepartnern. Sie wurden unter hohen Qualitätsanforder-ungen geprüft und sind in Deutschland zugelassen.
+          h4 Liebe zum Detail
+          p Das perfekte Geschenk für jede und jeden: Alle Produkte in unserer Box wurden von Hand ausgewählt und kommen in einer hochwertigen Box – das Auge isst schließlich mit!
   .section#preorder
     img.pattern-five(src="../images/INS_PATTERN_BLACK.png")
     img.pattern-six(src="../images/INS_PATTERN_BLACK.png")
     .container.preorder__container
       h3 Worauf Wartest du noch?
-      p.preorder__text Du möchtest eine INCREDIBLE BOX bestellen? Für nur 39,99 EUR erhältst du ein spannendes Überraschungspaket mit einer Auswahl an leckeren Insekten-Snacks von verschiedenen Herstellern. 
+      p.preorder__text Für nur 39,99 EUR erhältst du ein spannendes Überraschungspaket mit einer Auswahl an leckeren Insekten-Snacks von verschiedenen Herstellern. Du möchtest wissen wann du die INCREDIBLE BOX bestellen kannst? Trage dich hier ein!
       input.preorder__input(placeholder="Name" v-model="preorderName")
       input.preorder__input(placeholder="E-Mail" v-model="preorderEmail")
-      b-button.button.preorder__button(@click="clickOnPreorder" rounded :loading="preorderIsLoading") Jetzt bestellen
-  .footer.page-footer
-    .text-block
-      p Made with ♥️ by
-      img(src='../images/LOGO_DARK_GREEN.png' width='140px' height='10px')
+      p.preorder__subtext Deine Daten werden selbstverständlich mit höchster Sorgfalt behandelt! 😇
+      b-button.button.preorder__button(@click="clickOnPreorder" rounded :loading="preorderIsLoading") Jetzt vorbestellen
 </template>
 
 <script>
@@ -118,14 +115,10 @@ export default {
     async clickOnPreorder() {
       this.preorderIsLoading = true
       if (this.preorderEmail !== '' && this.preorderName !== '') {
-        await db.collection('tracker').doc('preorder-tracker').get()
-          .then(async item => {
-            const newCount = item.data().count + 1
-            await db.collection('tracker').doc('preorder-tracker').update({
-              count: newCount
-            })
-            .catch(err => console.error(err))
-          })
+        await db.collection('preorderList').add({
+          name: this.preorderName,
+          email: this.preorderEmail
+        })
           .catch(err => console.error(err))
         emailjs.send(VUE_APP_emailjs_serviceID, VUE_APP_emailjs_templateID, {
           user_name: this.preorderName,

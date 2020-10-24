@@ -1,27 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Main from '@/Views/Main'
 import LandingPage from '../Views/LandingPage'
+import Impressum from '../Views/Impressum'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Hello',
-    component: Main,
+    name: 'Incredible Insects',
+    component: LandingPage,
     meta: {
-      title: 'Incredible Insect'
+      title: 'Incredible Insects'
     }
   },
   {
-    path: '/staging',
-    name: 'Staging',
-    component: LandingPage,
+    path: '/impressum',
+    name: 'Impressum',
+    component: Impressum,
     meta: {
-      title: 'Incredible Insect'
+      title: 'Impressum'
     }
-  },
+  }
 ]
 
 const router = new VueRouter({
