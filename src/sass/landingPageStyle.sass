@@ -1,0 +1,424 @@
+@import ../sass/mystyles
+
+h1
+  font-size: 6rem
+  color: $primary-dark
+  margin-bottom: 1rem
+  line-height: 100%
+  
+@media screen and (max-width: 1024px)
+  h1
+    font-size: 3rem
+    color: $primary-dark
+    margin-bottom: 1rem
+    line-height: 100%
+
+h2
+  font-size: 4rem
+  color: $primary-dark
+
+@media screen and (max-width: 1024px)
+  h2
+    font-size: 2rem
+    color: $primary-dark
+
+h3
+  font-size: 2rem
+  color: $primary-dark
+  margin-bottom: 1rem
+
+@media screen and (max-width: 1024px)
+  h3
+    font-size: 1.5rem
+    color: $primary-dark
+    margin-bottom: 1rem
+
+h4
+  font-size: 1.5rem
+  color: $primary-dark
+  margin-bottom: 1rem
+
+p
+  font-size: 0.9rem
+  font-family: $text-font
+  line-height: 200%
+  color: $gray-text
+
+@media screen and (max-width: 1024px)
+  p
+    font-size: 0.7rem
+    font-family: $text-font
+    line-height: 200%
+    color: $gray-text
+
+input:focus
+  outline: 0
+
+.custom-section:first-child
+  height: 100vh
+  margin-top: -84px
+
+@media screen and (max-width: 1024px)
+  .custom-section:first-child
+    margin-top: -52px
+
+.custom-section
+  height: 100vh
+  padding-top: calc(10vh + 44px)
+
+@media screen and (max-width: 700px)
+  .custom-section
+    min-height: 100vh
+    height: 100%
+    padding-top: calc(10vh + 44px)
+
+.button
+  font-size: 0.9rem
+  height: 2.7rem
+  width: 9.5rem
+  font-weight: bold
+  color: white
+  font-family: $text-font
+  border-style: none
+  box-shadow: 0px 5px 6px $shadow-color
+
+@media screen and (max-width: 1024px)
+  .button
+    font-size: 0.7rem
+    height: 2rem
+    width: 7rem
+    font-weight: bold
+    color: white
+    font-family: $text-font
+    border-style: none
+    box-shadow: 0px 5px 6px $shadow-color
+
+.underline
+  text-decoration: underline $accent
+
+#header
+  background-color: $gray-bg
+  display: flex
+  position: relative
+
+  .pattern-one
+    position: absolute
+    opacity: 0.12
+    bottom: 75vh
+    left: -10vw
+    transform: rotate(187deg)
+    min-width: 1200px
+
+  .pattern-two
+    position: absolute
+    opacity: 0.12
+    top: 60vh
+    right: -60vw
+    min-width: 1200px
+
+  @media screen and (max-width: 1024px)
+    .pattern-two
+      display: none
+
+  .pattern-three
+    position: absolute
+    opacity: 0.12
+    top: 60vh
+    left: -70vw
+    min-width: 1200px
+
+  @media screen and (max-width: 1024px)
+    .pattern-three
+      display: none
+
+  .header__text
+    width: 37vw
+    z-index: 1
+    position: absolute
+    top: 30%
+
+    .header__button-order
+      color: white
+      background-color: $primary-dark
+      margin-right: 1rem
+      transition-duration: 0.5s
+
+    .header__button-order:hover
+      background-color: $accent
+      box-shadow: 0 0 0
+    
+    .header__button-more
+      color: white
+      background-color: $gray-button
+      transition-duration: 0.5s
+
+    .header__button-more:hover
+      background-color: $gray-text
+      box-shadow: 0 0 0
+
+    @media screen and (max-width: 1024px)
+      .header__button-more
+        display: none
+  
+  @media screen and (max-width: 700px)
+    .header__text
+      width: 70vw
+      z-index: 1
+      position: absolute
+      top: auto
+      bottom: 2rem
+
+  .header__first-box
+    position: absolute
+    width: 45vw
+    transform: rotate(-9deg)
+    top: -10vh
+    right: -32vw
+
+  @media screen and (max-width: 700px)
+    .header__first-box
+      display: none
+
+  .header__second-box
+    position: absolute
+    width: 50vw
+    transform: rotate(20deg)
+    top: 10vh
+    right: 0
+
+  @media screen and (max-width: 700px)
+    .header__second-box
+      position: absolute
+      min-width: 115vw
+      transform: rotate(20deg)
+      top: -10vh
+      left: -30vw
+  
+  .header__third-box
+    position: absolute
+    width: 45vw
+    transform: rotate(-12deg)
+    right: 20vw
+    top: 55vh
+
+  @media screen and (max-width: 700px)
+    .header__third-box
+      position: absolute
+      min-width: 130vw
+      transform: rotate(-12deg)
+      top: 10vh
+      right: -80vw
+
+#motivation
+  .motivation__container
+    display: flex
+    position: relative
+    
+    .text-block
+      padding-top: 15vh
+      flex: 1
+      width: 30rem
+    
+    @media screen and (max-width: 700px)
+      .text-block
+        padding-top: 15vh
+        flex: 1
+        width: 100%
+    
+    .motivation__diagrams
+      flex: 2
+      display: flex
+    
+    @media screen and (max-width: 700px)
+      .motivation__diagrams
+        display: block
+  
+  @media screen and (max-width: 700px)
+    .motivation__container
+      display: block
+      margin-top: -20vh
+
+#the-incredible-box
+  background-color: $gray-bg
+  position: relative
+
+  .pattern-four
+    position: absolute
+    opacity: 0.12
+    top: 50vh
+    right: -60vw
+    min-width: 1200px
+  
+  @media screen and (max-width: 800px)
+    .pattern-four
+      position: absolute
+      opacity: 0.12
+      top: -30vh
+      right: -900px
+      min-width: 1200px
+
+  .the-incredible-box__container
+    position: relative
+
+    .the-incredible-box__first-box
+      position: absolute
+      width: 55vw
+      transform: rotate(14deg)
+      top: -10vh
+      left: -15vw
+    
+    @media screen and (max-width: 800px)
+      .the-incredible-box__first-box
+        position: absolute
+        min-width: 120vw
+        transform: rotate(14deg)
+        top: 10vh
+        left: -30vw
+
+    .the-incredible-box__second-box
+      position: absolute
+      width: 50vw
+      transform: rotate(-12deg)
+      top: 40vh
+      left: 0
+
+    @media screen and (max-width: 800px)
+      .the-incredible-box__second-box
+        position: absolute
+        min-width: 90vw
+        transform: rotate(-12deg)
+        top: 60vh
+        left: 0
+
+    .text-block
+      padding-top: 5vh
+      width: 30rem
+      float: right
+    
+    @media screen and (max-width: 800px)
+      .text-block
+        margin-top: -10vh
+        width: 100%
+        float: left
+
+.our-values
+  .our-values__container
+    .our-values__title-block
+      margin-bottom: 4rem
+
+      .our-values__title
+        text-align: center
+    
+    .our-values__values
+      display: flex
+      justify-content: space-between
+      margin-left: 10vw
+      margin-right: 10vw
+
+      .text-block
+        width: 15rem
+        text-align: center
+
+        .our-values__values-icon
+          margin-bottom: 2rem
+
+    @media screen and (max-width: 700px)
+      .our-values__values
+        display: block
+        justify-content: space-between
+        margin-left: 10vw
+        margin-right: 10vw
+
+        .text-block
+          width: 100%
+          margin-bottom: 3rem
+
+#preorder
+  padding-bottom: 100px
+  background-color: $primary-bright
+  position: relative
+  
+  .pattern-five
+    position: absolute
+    bottom: 0
+    left: -60vw
+    opacity: 0.12
+    min-width: 1200px
+    height: 400px
+    object-fit: cover
+  
+  @media screen and (max-width: 700px)
+    .pattern-five
+      display: none
+
+  .pattern-six
+    position: absolute
+    opacity: 0.12
+    bottom: 0
+    right: -60vw
+    min-width: 1200px
+    height: 400px
+    object-fit: cover
+
+  @media screen and (max-width: 700px)
+    .pattern-six
+      position: absolute
+      opacity: 0.12
+      bottom: -20vh
+      right: -900px
+      min-width: 1200px
+      height: 400px
+      object-fit: cover
+
+  .preorder__container
+    display: flex
+    justify-content: center
+    flex-direction: column
+    text-align: center
+
+    .preorder__button
+      display: block
+      color: white
+      background-color: $primary-dark
+      margin-left: auto
+      margin-right: auto
+      transition-duration: 0.5s
+
+    .preorder__button:hover
+      background-color: $gray-text
+      box-shadow: 0 0 0
+
+    .preorder__input
+      display: block
+      border-style: none
+      width: 20rem
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 1rem
+      height: 2.5rem
+      font-weight: bold
+      border-radius: 2rem
+      padding-left: 1rem
+      padding-right: 1rem
+
+    .preorder__text
+      width: 40vw
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 1rem
+    
+    @media screen and (max-width: 700px)
+      .preorder__text
+        width: 100%
+  
+.page-footer
+  background-color: $primary
+  height: 30vh
+  position: relative
+
+  .text-block
+    position: absolute
+    bottom: 3rem
+    left: 50%
+    transform: translateX(-50%)
+    text-align: center

@@ -1,6 +1,15 @@
 <template lang="pug">
   div#app
-    button#preorder-button(v-on:click="clickOnPreorder") Preorder Now!
+    b-navbar(fixed-top :transparent="true" spaced)
+      template(slot='brand')
+        b-navbar-item(href='#')
+          img(src='./images/LOGO_DARK_GREEN.png' alt='incredible insects logo' width='140px' height='10px')
+      template(slot='end')
+        b-navbar-item(href='#') Home
+        b-navbar-item(href='#motivation')  Warum Insekten?
+        b-navbar-item(href='#the-incredible-box') The Incredible Box
+        b-navbar-item(href='#preorder') Bestellen
+    router-view
 </template>
 
 <script>
@@ -8,20 +17,6 @@ import { db } from './db'
 
 export default {
   name: 'App',
-  methods: {
-    async clickOnPreorder() {
-      await db.collection('tracker').doc('preorder-tracker').get()
-        .then(async item => {
-          const newCount = item.data().count + 1
-          await db.collection('tracker').doc('preorder-tracker').update({
-            count: newCount
-          })
-          .catch(err => console.error(err))
-        })
-        .then(() => alert('Sorry, aktuell ist es nicht mehr verfügbar. Versuche es später nochmal!'))
-        .catch(err => console.error(err))
-    }
-  },
   async mounted() {
     await db.collection('tracker').doc('page-tracker').get()
       .then(async item => {
@@ -37,45 +32,21 @@ export default {
 </script>
 
 <style lang="sass">
+@import ./sass/mystyles
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap')
 
-html, body
+html
   margin: 0
   padding: 0
   box-sizing: border-box
   font-size: 16pt
 
 #app
-  font-family: Avenir, Helvetica, Arial, sans-serif
+  font-family: Bebas Neue, Noto Sans JP, Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  text-align: center
-  height: 100vh
-  width: 100vw
-  margin: 0
-  padding: 0
-  background-color: black
-  display: flex
-  align-items: center
-  justify-content: center
 
-  #preorder-button
-    font-family: 'Bebas Neue', cursive
-    font-size: 2rem
-    padding: 0.5rem 2rem
-    color: white
-    background: none
-    cursor: pointer
-    border:
-      style: solid
-      radius: 25px
-      width: 2px
-      color: #f9ff00
-    
-    &:hover
-      transform: scale(1.1)
-      background-color: #3f4000
-
-    transition: all 0.3s ease
-
+nav.navbar.is-fixed-top
+  background: transparent
 </style>
