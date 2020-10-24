@@ -3,13 +3,12 @@
     b-navbar(fixed-top :transparent="true" spaced)
       template(slot='brand')
         b-navbar-item(href='#')
-          img(src='./images/ii-logo.png' alt='incredible insects logo' width='140px' height='10px')
+          img(src='./images/LOGO_DARK_GREEN.png' alt='incredible insects logo' width='140px' height='10px')
       template(slot='end')
         b-navbar-item(href='#') Home
         b-navbar-item(href='#motivation')  Warum Insekten?
         b-navbar-item(href='#the-incredible-box') The Incredible Box
         b-navbar-item(href='#preorder') Bestellen
-        b-navbar-item(href='#contact') Kontakt
     landing-page
 </template>
 
@@ -51,12 +50,6 @@ html
   font-family: Bebas Neue, Noto Sans JP, Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-
-h1
-  font-size: 10rem
-  font-family: $title-font
-  color: black
-  line-height: 100%
 
 nav.navbar.is-fixed-top
   background: transparent
