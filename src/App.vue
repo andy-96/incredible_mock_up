@@ -9,18 +9,14 @@
         b-navbar-item(href='#motivation')  Warum Insekten?
         b-navbar-item(href='#the-incredible-box') The Incredible Box
         b-navbar-item(href='#preorder') Bestellen
-    landing-page
+    router-view
 </template>
 
 <script>
 import { db } from './db'
-import LandingPage from './Views/LandingPage'
 
 export default {
   name: 'App',
-  components: {
-    "landing-page": LandingPage
-  },
   async mounted() {
     await db.collection('tracker').doc('page-tracker').get()
       .then(async item => {

@@ -24,6 +24,7 @@
     "sass": "^1.27.0",
     "sass-loader": "^10.0.3",
     "vue": "^2.6.11",
+    "vue-router": "^3.4.7",
     "vuefire": "^2.2.4"
   },
   "devDependencies": {

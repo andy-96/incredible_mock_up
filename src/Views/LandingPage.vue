@@ -117,29 +117,34 @@ export default {
   methods: {
     async clickOnPreorder() {
       this.preorderIsLoading = true
-      await db.collection('tracker').doc('preorder-tracker').get()
-        .then(async item => {
-          const newCount = item.data().count + 1
-          await db.collection('tracker').doc('preorder-tracker').update({
-            count: newCount
+      if (this.preorderEmail !== '' && this.preorderName !== '') {
+        await db.collection('tracker').doc('preorder-tracker').get()
+          .then(async item => {
+            const newCount = item.data().count + 1
+            await db.collection('tracker').doc('preorder-tracker').update({
+              count: newCount
+            })
+            .catch(err => console.error(err))
           })
           .catch(err => console.error(err))
-        })
-        .catch(err => console.error(err))
-      emailjs.send(VUE_APP_emailjs_serviceID, VUE_APP_emailjs_templateID, {
-        user_name: this.preorderName,
-        user_email: this.preorderEmail
-      }, VUE_APP_emailjs_userID)
-        .then(() => {
-          this.preorderEmail = ''
-          this.preorderName = ''
-          this.preorderIsLoading = false
-          alert('Wir werden in den nächsten zwei Tagen Kontakt mit dir aufnehmen!')
-        })
-        .catch(err => {
-          alert('Irgendwas ist schief gelaufen... Versuche es später nochmal!')
-          console.error(err)
-        })
+        emailjs.send(VUE_APP_emailjs_serviceID, VUE_APP_emailjs_templateID, {
+          user_name: this.preorderName,
+          user_email: this.preorderEmail
+        }, VUE_APP_emailjs_userID)
+          .then(() => {
+            this.preorderEmail = ''
+            this.preorderName = ''
+            this.preorderIsLoading = false
+            alert('Wir werden in den nächsten zwei Tagen Kontakt mit dir aufnehmen!')
+          })
+          .catch(err => {
+            alert('Irgendwas ist schief gelaufen... Versuche es später nochmal!')
+            console.error(err)
+          })
+      } else {
+        alert('Bitte alle Felder ausfüllen!')
+        this.preorderIsLoading = false
+      }
     },
     clickOnHeaderPreorder() {
       document.getElementById('preorder').scrollIntoView()
@@ -154,8 +159,4 @@ export default {
 <style lang="sass" scoped>
 @import ../sass/mystyles
 @import ../sass/landingPageStyle
-
-
-
-
 </style>

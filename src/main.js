@@ -7,6 +7,7 @@ import './sass/mystyles.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faChild, faGlobeEurope, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import router from './router'
  
 library.add(faChild, faGlobeEurope, faHeart)
 
@@ -18,5 +19,6 @@ Vue.use(firestorePlugin)
 Vue.config.productionTip = false
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')
