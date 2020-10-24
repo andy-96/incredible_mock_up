@@ -9,12 +9,18 @@ const routes = [
   {
     path: '/',
     name: 'Hello',
-    component: Main
+    component: Main,
+    meta: {
+      title: 'Incredible Insect'
+    }
   },
   {
     path: '/staging',
     name: 'Staging',
-    component: LandingPage
+    component: LandingPage,
+    meta: {
+      title: 'Incredible Insect'
+    }
   },
 ]
 

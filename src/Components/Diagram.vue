@@ -6,22 +6,22 @@
       .diagram__bar.dark(
         :style="{ height: insectValue * 0.5 + 'vh' }"
       )
-      .diagram__icon
+      img.diagram__icon(src="../images/bug.png")
     .diagram__column(:style="{ 'transform': 'translateX(3vw)'}")
       h4.diagram__indicator {{ meatValueDescription }}
       .diagram__bar.bright(
         :style="{ height: meatValue * 0.5  + 'vh' }"
       )
-      .diagram__icon
+      img.diagram__icon(src="../images/cow.png")
   h4.diagram__description {{ description }}
   <!-- Mobile View -->
   .diagram__container(v-if="isDesktopView === false")
     .diagram__column
-      .diagram__icon
+      img.diagram__icon(src="../images/bug.png")
       .diagram__bar.dark(:style="{ width: insectValue * 0.8 + 'vw' }")
       h4.diagram__indicator {{ insectValueDescription }}
     .diagram__column
-      .diagram__icon
+      img.diagram__icon(src="../images/cow.png")
       .diagram__bar.bright(:style="{ width: meatValue * 0.8  + 'vw' }")
       h4.diagram__indicator {{ meatValueDescription }}
 
@@ -98,11 +98,23 @@ h4
       .diagram__bar
         width: 3rem
         border-radius: 0.5rem
+      
+      .diagram__icon
+        width: 3rem
+        height: 3rem
+        opacity: 0.5
+        margin-top: 1rem
+        margin-right: 0
 
       @media screen and (max-width: 1024px)
         .diagram__bar
           width: 2rem
           border-radius: 0.5rem
+
+        .diagram__icon
+          width: 2rem
+          height: 2rem
+          opacity: 0.5
 
   .diagram__description
     position: absolute
@@ -140,6 +152,13 @@ h4
           border-radius: 0.5rem
           margin-bottom: 1.5rem
           margin-right: 0.5rem
+
+        .diagram__icon
+          width: 2rem
+          height: 2rem
+          opacity: 0.5
+          margin-right: 1rem
+          margin-top: 0
 
     .diagram__description
       text-align: left

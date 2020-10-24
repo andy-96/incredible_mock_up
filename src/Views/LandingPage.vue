@@ -153,6 +153,9 @@ export default {
       document.getElementById('the-incredible-box').scrollIntoView()
     }
   },
+  mounted() {
+    document.title = this.$route.meta.title
+  }
 }
 </script>
 

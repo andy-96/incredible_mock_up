@@ -22,6 +22,7 @@ export default {
     }
   },
   async mounted() {
+    document.title = this.$route.meta.title
     await db.collection('tracker').doc('page-tracker').get()
       .then(async item => {
         const newCount = item.data().count + 1

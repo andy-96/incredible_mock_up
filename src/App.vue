@@ -36,11 +36,12 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap')
 
-html
+body, html
   margin: 0
   padding: 0
   box-sizing: border-box
   font-size: 16pt
+  overflow-x: hidden
 
 #app
   font-family: Bebas Neue, Noto Sans JP, Avenir, Helvetica, Arial, sans-serif
