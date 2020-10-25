@@ -4,7 +4,7 @@ div
     img.pattern-one(src="../images/INS_PATTERN_BLACK.png")
     img.pattern-two(src="../images/INS_PATTERN_BLACK.png")
     img.pattern-three(src="../images/INS_PATTERN_BLACK.png")
-    .container
+    .container.header__container
       .header__text
         h1 Wie wäre es mal mit was neuem?
         h3 Probiere jetzt die Zukunft
@@ -36,7 +36,7 @@ div
       img.the-incredible-box__second-box(src="../images/incredible-box.png")
       .text-block
         h3 The Incredible Box
-        p Wo soll man eigentlich anfangen, wenn man in die vielseitige kulinarische Welt der Insekten eintauchen möchte? Unsere von Hand zusammengestellte INCREDIBLE BOX enthält dieleckersten und erfolgreichsten Produkte – vom hochwertigen Proteinpulver für den Muskelaufbau bis hin zu köstlichen Snacks für Zwischendurch. Das perfekte Geschenk für Freunde oder für dich selbst!
+        p Wo soll man eigentlich anfangen, wenn man in die vielseitige kulinarische Welt der Insekten eintauchen möchte? Unsere von Hand zusammengestellte INCREDIBLE BOX enthält die leckersten und erfolgreichsten Produkte – vom hochwertigen Proteinpulver für den Muskelaufbau bis hin zu köstlichen Snacks für Zwischendurch. Das perfekte Geschenk für Freunde oder für dich selbst!
   .section.custom-section.our-values
     .container.our-values__container
       .our-values__title-block
