@@ -1,24 +1,10 @@
-# incredible_mock_up
+# Website for incredible insects
 
-## Project setup
-```
-yarn install
-```
+![Screenshot](assets/Screenshot.png)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+This is the code for a project about introducing insects to the mass market.
 
-### Compiles and minifies for production
-```
-yarn build
-```
+www.incredible-insects.com
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Quickstart for development
+Run `yarn serve`
