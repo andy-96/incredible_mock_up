@@ -147,6 +147,7 @@ export default {
     }
   },
   mounted() {
+    console.log('yo')
     document.title = this.$route.meta.title
   }
 }

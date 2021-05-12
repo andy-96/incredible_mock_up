@@ -26,6 +26,7 @@ export default {
   methods: {
   },
   async mounted() {
+    console.log('yooo')
     await db.collection('tracker').doc('page-tracker').get()
       .then(async item => {
         const newCount = item.data().count + 1
