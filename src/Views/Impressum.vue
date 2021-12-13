@@ -14,8 +14,6 @@
     br
     | Andy Chen
     br
-    | Michael Amroudi
-    br
     | Leonhard D&ouml;ring
     br
   p
@@ -24,7 +22,7 @@
     | Telefon: 0178-9832452
     br
     | E-Mail: 
-    a(href='mailto:andy_chen1996@yahoo.de') andy_chen1996@yahoo.de
+    a(href='mailto:andy_chen1996@yahoo.de') andy_chen1996[@]yahoo.de
     br
   p
     strong Haftungsausschluss: 
